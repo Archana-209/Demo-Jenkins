@@ -1,0 +1,11 @@
+pipeline{
+    agent any
+        stages{
+            stage('Executing the Ansible Playbook') {
+                steps{
+                    ansiblePlaybook credentialsId: 'Private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/home/ubuntu/Mini-Project/inventory.ini', playbook: '/home/ubuntu/Mini-Project/mini.yaml', vaultTmpPath: ''
+                }
+            }
+        }
+    
+}
